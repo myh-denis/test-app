@@ -9,5 +9,9 @@ export const coreRoutes: Routes = [
   {
     path: 'payment',
     loadChildren: () => import('src/app/pages/payment/payment.module').then(mod => mod.PaymentModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('src/app/pages/page-not-found/page-not-found.module').then(mod => mod.PageNotFoundModule)
   }
 ];
