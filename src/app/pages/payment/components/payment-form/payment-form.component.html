@@ -1,0 +1,90 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submitForm()"
+  id="newScreeningForm"
+  name="newScreeningForm"
+>
+  <div formGroupName="payment">
+    <div class="card-wrapper">
+      <div class="card-row">
+        <!-- credit card number -->
+        <div class="big-part">
+          <mat-form-field class="w-100">
+            <mat-label>
+              <app-input-errors
+                [control]="form.get('payment.' + formControlNames.CARD_NUMBER)"
+                [label]="formLabels[formControlNames.CARD_NUMBER]">
+              </app-input-errors>
+            </mat-label>
+            <input
+              matInput
+              placeholder="XXXX XXXX XXXX XXXX"
+              [textMask]="{mask: mask.card, guide: false}"
+              [formControlName]="formControlNames.CARD_NUMBER"
+              [name]="formControlNames.CARD_NUMBER"
+            >
+          </mat-form-field>
+        </div>
+
+        <!-- expiration date -->
+        <div class="small-part">
+          <mat-form-field class="w-100">
+            <mat-label>
+              <app-input-errors
+                [control]="form.get('payment.' + formControlNames.EXPIRATION_DATE)"
+                [label]="formLabels[formControlNames.EXPIRATION_DATE]">
+              </app-input-errors>
+            </mat-label>
+            <input
+              matInput
+              placeholder="MM/YY"
+              [textMask]="{mask: mask.expiration, placeholderChar: '\u2000'}"
+              [formControlName]="formControlNames.EXPIRATION_DATE"
+              [name]="formControlNames.EXPIRATION_DATE"
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="card-row">
+        <!-- card owner name -->
+        <div class="big-part">
+          <mat-form-field class="w-100">
+            <input
+              matInput
+              [formControlName]="formControlNames.USER_NAME"
+              [name]="formControlNames.USER_NAME"
+            >
+            <mat-placeholder>
+              <app-input-errors
+                [control]="form.get('payment.' + formControlNames.USER_NAME)"
+                [label]="formLabels[formControlNames.USER_NAME]">
+              </app-input-errors>
+            </mat-placeholder>
+          </mat-form-field>
+        </div>
+
+        <!-- SVV2 code -->
+        <div class="small-part">
+          <mat-form-field class="w-100">
+            <mat-label>
+              <app-input-errors
+                [control]="form.get('payment.' + formControlNames.SECURITY_CODE)"
+                [label]="formLabels[formControlNames.SECURITY_CODE]">
+              </app-input-errors>
+            </mat-label>
+            <input
+              matInput
+              type="password"
+              placeholder="XXX"
+              [textMask]="{mask: mask.code,guide: false}"
+              [formControlName]="formControlNames.SECURITY_CODE"
+              [name]="formControlNames.SECURITY_CODE"
+            >
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" mat-raised-button color="primary" class="card-button green-button">Pay: ${{totalPrice}}</button>
+</form>

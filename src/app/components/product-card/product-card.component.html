@@ -1,0 +1,13 @@
+<div class="product-card">
+  <div class="image-container">
+    <app-picture [images]="item.images" [src]="item.image" [alt]="item.name"></app-picture>
+  </div>
+  <div class="info-container">
+    <div class="main-info">
+      <div class="name text-overflow">{{item.name}}</div>
+      <div>${{item.price}}</div>
+    </div>
+    <div class="text-grey text-overflow">{{item.description}}</div>
+  </div>
+  <button (click)="clickButton.emit()" mat-flat-button color="primary" class="card-button green-button">Buy</button>
+</div>

@@ -1,0 +1,21 @@
+.page-container {
+  padding-top: 60px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  width: 300px;
+  height: calc(100vh - 60px);
+  padding: 20px;
+}
+
+.content-part {
+  height: calc(100vh - 60px);
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

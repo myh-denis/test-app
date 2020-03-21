@@ -1,0 +1,13 @@
+@import "src/styles/variables/colors.scss";
+
+.result-wrapper {
+  text-align: center;
+}
+
+.successful-result {
+  color: $green;
+}
+
+.failure-result {
+  color: $red;
+}

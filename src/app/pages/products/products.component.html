@@ -1,0 +1,27 @@
+<div class="wrapper page-wrapper">
+  <app-loader *ngIf="loading && !productList.length; else content"></app-loader>
+</div>
+
+<ng-template #content>
+  <app-loader *ngIf="loading"></app-loader>
+
+  <div class="row">
+    <h1 class="title col-md-4 col-12">Product list:</h1>
+  </div>
+
+  <div class="product-list row" *ngIf="productList.length; else emptyState">
+    <div class="col-md-4 col-12" *ngFor="let item of productList">
+      <app-product-card (clickButton)="addProduct(item)" [item]="item"></app-product-card>
+    </div>
+  </div>
+
+  <div class="show-more" *ngIf="this.showButton">
+    <button (click)="showMore()" mat-button color="primary">Show more</button>
+  </div>
+</ng-template>
+
+<ng-template #emptyState>
+  <div class="row">
+    <h2 class="col-md-4 col-12">No records.</h2>
+  </div>
+</ng-template>

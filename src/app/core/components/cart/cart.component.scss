@@ -1,0 +1,27 @@
+@import "src/styles/variables/colors.scss";
+
+.list-wrapper {
+  margin-bottom: 20px;
+}
+
+.list-item {
+  padding: 20px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $grey;
+  }
+}
+
+.main-info, .total-price {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.name {
+  padding-right: 10px;
+}
+
+.button-hide {
+  display: none;
+}

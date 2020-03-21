@@ -1,0 +1,19 @@
+:host, .wrapper {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+.title {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.product-list {
+  display: flex;
+}
+
+.show-more {
+  display: flex;
+  justify-content: space-around;
+}

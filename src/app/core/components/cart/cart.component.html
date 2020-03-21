@@ -1,0 +1,25 @@
+<div>
+  <h2 *ngIf="!list.length; else content">Cart is empty :(</h2>
+</div>
+
+<ng-template #content>
+  <h2>Your cart:</h2>
+
+  <div class="list-wrapper">
+    <div class="list-item" *ngFor="let item of list">
+      <div class="main-info">
+        <div class="name text-overflow">{{item.name}}</div>
+        <div>${{item.price}}</div>
+      </div>
+      <div class="text-grey text-overflow">{{item.description}}</div>
+    </div>
+  </div>
+
+  <div class="total-price">
+    <h3>Total:</h3>
+    <h2>${{totalPrice}}</h2>
+  </div>
+  <a routerLink="/payment" routerLinkActive="button-hide">
+    <button (click)="clickOrder.emit()" mat-flat-button color="primary" class="green-button">Order</button>
+  </a>
+</ng-template>

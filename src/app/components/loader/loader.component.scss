@@ -1,0 +1,14 @@
+@import "src/styles/variables/colors.scss";
+
+.spinner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh - 60px);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: rgba($white,.5);
+  z-index: 99;
+}

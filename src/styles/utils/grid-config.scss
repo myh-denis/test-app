@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/mixins/breakpoints";
+
+$grid-breakpoints: (
+  xs: 0,
+  md: 768px
+) !default;
+
+$container-max-widths: (
+  xs: 500px,
+  md: 960px
+) !default;
+
+$grid-gutter-width: 20px !default;

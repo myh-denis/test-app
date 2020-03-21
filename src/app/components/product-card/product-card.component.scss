@@ -1,0 +1,31 @@
+@import "src/styles/variables/colors.scss";
+
+.product-card {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px 0 rgba(46, 45, 54, 0.25);
+  margin-bottom: 40px;
+}
+
+.image-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.info-container {
+  padding: 20px;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.name {
+  padding-right: 10px;
+}
+
+.card-button {
+  border-radius: 0;
+}

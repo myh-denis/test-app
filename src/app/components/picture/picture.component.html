@@ -1,0 +1,10 @@
+<picture class="picture" *ngIf="images; else img">
+  <source [srcset]="images.size1" media="(min-width: 1024px)">
+  <source [srcset]="images.size2" media="(max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+  <source [srcset]="images.size3" media="(max-width: 1023px)">
+  <img class="image" [src]="src" [alt]="alt">
+</picture>
+
+<ng-template #img>
+  <img class="image" [src]="src" [alt]="alt">
+</ng-template>

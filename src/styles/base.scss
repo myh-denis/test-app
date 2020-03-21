@@ -1,0 +1,122 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-size: 14px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $black;
+
+  &.cdk-global-scrollblock {
+    height: auto;
+  }
+}
+
+body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  min-width: 320px;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: $fontFamily;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none !important;
+  border: 0;
+  color: $primary;
+}
+
+.container {
+  position: relative;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.relative-container {
+  position: relative;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.z-index-header {
+  z-index: $header;
+}
+
+.z-index-modal {
+  z-index: $modal;
+}
+
+.z-index-spinner {
+  z-index: $spinner;
+}
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.green-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  color: $white !important;
+  background-color: $green !important;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+@include media-breakpoint-only(xs) {
+  img {
+    max-width: 100%;
+  }
+  .md-only {
+    display: none !important;
+  }
+  .page-wrapper {
+    padding-bottom: 30px;
+  }
+}
+
+@include media-breakpoint-only(md) {
+  body {
+    min-width: 960px;
+  }
+  .xs-only {
+    display: none !important;
+  }
+  .page-wrapper {
+    padding-bottom: 50px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+}

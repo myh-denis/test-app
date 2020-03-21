@@ -1,0 +1,26 @@
+<div class="page-wrapper wrapper">
+  <app-loader *ngIf="loading"></app-loader>
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <div *ngIf="!complete && !products.length; else content">
+        <h1>Your cart is empty</h1>
+        <a routerLink="/">
+          <h3>Product list</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content>
+  <div *ngIf="!complete; else result">
+    <h1>Secure Payment Info</h1>
+    <div class="card-container">
+      <app-payment-form [totalPrice]="totalPrice" (formSubmit)="onSubmit($event)"></app-payment-form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #result>
+  <app-payment-result [success]="success"></app-payment-result>
+</ng-template>

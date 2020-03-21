@@ -1,0 +1,35 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/utilities/_display";
+
+@include media-breakpoint-only(xs) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .row {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  [class*="col-"], .col {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.row {
+  &-default-gap {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+}
+
+[class*="col-"], .col {
+  &.col-default-gap {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
