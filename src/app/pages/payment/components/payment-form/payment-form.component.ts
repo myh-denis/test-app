@@ -28,7 +28,10 @@ export class PaymentFormComponent implements OnInit {
     this.form = this.fb.group({
       payment: this.fb.group({
         [USER_NAME]: ['', formValidators.required(this.formLabels[USER_NAME])],
-        [CARD_NUMBER]: ['', formValidators.minLength(MIN_CARD_NUMBER_LENGTH, this.formLabels[CARD_NUMBER])],
+        [CARD_NUMBER]: ['', [
+          formValidators.required(this.formLabels[CARD_NUMBER]),
+          formValidators.minLength(MIN_CARD_NUMBER_LENGTH, this.formLabels[CARD_NUMBER])
+        ]],
         [EXPIRATION_DATE]: ['', formValidators.expirationDate(this.formLabels[EXPIRATION_DATE])],
         [SECURITY_CODE]: ['', formValidators.required(this.formLabels[SECURITY_CODE])],
       })

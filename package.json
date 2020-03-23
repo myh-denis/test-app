@@ -13,7 +13,8 @@
     "build:ssr": "ng build --prod && ng run test-app:server:production",
     "prerender": "ng run test-app:prerender",
     "server:start": "pm2 start server/app.js --name 'test-app-server' && pm2 list",
-    "server:stop": "pm2 stop test-app-server"
+    "server:restart": "pm2 stop test-app-server && npm run server:start",
+    "server:stop": "pm2 stop test-app-server && pm2 delete test-app-server"
   },
   "private": true,
   "dependencies": {
